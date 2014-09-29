@@ -1,0 +1,122 @@
+@import "compass/reset";
+@import "compass/css3";
+*{
+  font-family: Arial;
+  color:#fff;
+}
+.clearfix{
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+.active{
+  border:red solid 1px;
+}
+table{
+  /*border-color: #ccc0b3;*/
+  margin-bottom: 20px;
+  tr{
+    td{
+      text-align: center;
+      position: relative;
+      height:80px;
+      input{
+        width:60px;
+        position: absolute;
+        left:50%;
+        margin-left: -30px;
+        font-family: Arial;
+        color: #fff;
+      }
+      span{
+        margin-bottom: 10px;
+        color: #ccc0b3;
+        font-size: 1.3em;
+        font-weight: bolder;
+        display: block;
+      }
+    }
+  }
+}
+input{
+  background:#ccc0b3 ;
+  border:0;
+  display: block;
+  border-radius: 5px;
+  height:20px;
+  color:#000;
+}
+#ren{
+  width:70%;
+  border-radius: 10px;
+  background:#8f7a66;
+  margin:50px auto;
+  .renN{
+    display: inline-block;
+    /*border:red solid 2px;*/
+    .table-head{
+      width:100%;
+      text-align: center;
+      display: inline-block;
+      font-family: "microsoft yahei";
+      color:#fff;
+      font-size: 1.4em;
+    }
+  }
+  #dropArea{
+    width:20%;
+    text-align: center;
+    float: left;
+    .screen{
+      width:80%;
+      height:120px;
+      margin:30px auto;
+      border-radius: 10px;
+      background:#ccc0b3 ;
+      color:#000;
+      font-size:1.4em;
+      padding:10px;
+    }
+    .three{
+      input{
+        display:block;
+        margin: 5px auto;
+        width:50px;
+      }
+      .raw{
+        display: inline-block;
+      }
+    }
+  }
+  #outArea{
+    width:20%;
+    text-align: center;
+    float: right;
+    .outBox{
+      width:80%;
+      height:160px;
+      background: #ccc0b3;
+      margin:30px auto;
+      box-shadow:-4px -4px 4px #000;
+      border-radius: 5px;
+      font-size: 4em;
+      text-align: center;
+      line-height: 160px;
+      vertical-align: middle;
+    }
+  }
+  #buyArea{
+    width:60%;
+    /*text-align: center;*/
+    table{
+      width:100%;
+    }
+  }
+}
