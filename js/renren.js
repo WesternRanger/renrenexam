@@ -12,7 +12,6 @@ window.onload = function drop(){
                 screen.innerHTML = "您投入的金额是"+this.value+"元";
                 compare(1);
                 outPrice(1);
-
                 break;
             case "5":
                 screen.innerHTML = "您投入的金额是"+this.value+"元";
@@ -51,8 +50,6 @@ function compare(a){//a代表输入的金额
                 var clickValue = this.value;
                 var left = input.value-clickValue;
                 screen.innerHTML="剩余金额为"+left+"元";
-                <!--清除金额不够购买商品的高亮-->
-//                         alert(this.previousSibling.value);
             }
         }
     }

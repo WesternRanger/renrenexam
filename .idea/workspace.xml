@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="eb24a1dc-b054-47fc-9c32-502c0c873705" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/renren.js" afterPath="$PROJECT_DIR$/js/renren.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/人人面试题重构.html" afterPath="$PROJECT_DIR$/人人面试题重构.html" />
     </list>
     <ignored path="renrenexam.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,7 +28,7 @@
       <file leaf-file-name="人人面试题重构.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/人人面试题重构.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="6" selection-start="1940" selection-end="1940" vertical-scroll-proportion="-36.0" vertical-offset="0" max-vertical-offset="1512">
+            <state line="12" column="5" selection-start="304" selection-end="304" vertical-scroll-proportion="-4.5" vertical-offset="162" max-vertical-offset="1512">
               <folding />
             </state>
           </provider>
@@ -39,7 +37,7 @@
       <file leaf-file-name="renren.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/renren.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="29" selection-start="78" selection-end="78" vertical-scroll-proportion="-0.23275863" vertical-offset="243" max-vertical-offset="3186">
+            <state line="94" column="35" selection-start="3191" selection-end="3191" vertical-scroll-proportion="1.8155172" vertical-offset="1485" max-vertical-offset="3105">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -75,8 +73,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/sass/ie.scss" />
-        <option value="$PROJECT_DIR$/js/renren.js" />
         <option value="$PROJECT_DIR$/人人面试题重构.html" />
+        <option value="$PROJECT_DIR$/js/renren.js" />
       </list>
     </option>
   </component>
@@ -302,13 +300,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/jQuery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="25" selection-start="492" selection-end="492" vertical-scroll-proportion="0.2857143" vertical-offset="0" max-vertical-offset="245808">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sass/ie.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="1" selection-start="273" selection-end="273" vertical-scroll-proportion="41.25" vertical-offset="2025" max-vertical-offset="3429">
@@ -325,14 +316,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/人人面试题重构.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="6" selection-start="1940" selection-end="1940" vertical-scroll-proportion="-36.0" vertical-offset="0" max-vertical-offset="1512">
+        <state line="12" column="5" selection-start="304" selection-end="304" vertical-scroll-proportion="-4.5" vertical-offset="162" max-vertical-offset="1512">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/renren.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="29" selection-start="78" selection-end="78" vertical-scroll-proportion="-0.23275863" vertical-offset="243" max-vertical-offset="3186">
+        <state line="94" column="35" selection-start="3191" selection-end="3191" vertical-scroll-proportion="1.8155172" vertical-offset="1485" max-vertical-offset="3105">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
