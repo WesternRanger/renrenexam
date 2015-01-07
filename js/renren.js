@@ -40,6 +40,7 @@ function compare(a){//a代表输入的金额
         var price = td[i].childNodes[1];
         if(price.value<=a){
             price.style.background='darkgreen';
+            price.disabled=false;
             price.onclick=function(){
                 <!--点击后出货框显示-->
                 var outBox = document.getElementsByClassName("outBox")[0];
