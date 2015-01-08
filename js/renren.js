@@ -4,7 +4,7 @@
 <!--投币函数-->
 window.onload = function drop(){
     var input = document.getElementsByClassName("rawIn1")[0];
-    input.onblur=function(){
+    input.onkeyup=function(){
         setTimeout(autoOut,20000);
         var screen = document.getElementsByClassName("screen")[0];
         switch(this.value){
@@ -36,25 +36,43 @@ window.onload = function drop(){
 <!--比较函数-->
 function compare(a){//a代表输入的金额
     var td = document.getElementsByTagName("td");
-    for(var i=0;i<td.length;i++){
-        var price = td[i].childNodes[1];
+    //for(var i= 0,len=td.length;i<len;i++){
+    for(var i in td){
+        var price = td[i].childNodes[1];//获取每个商品栏td里的第二个元素input
         if(price.value<=a){
-            price.style.background='darkgreen';
-            price.disabled=false;
+            //如果投入的钱购买某个商品，该商品高亮显示
+            priceEnough(price);
+
             price.onclick=function(){
+                var self = this;
                 <!--点击后出货框显示-->
-                var outBox = document.getElementsByClassName("outBox")[0];
-                outBox.innerHTML = this.previousSibling.innerHTML;
+                outBoxShow(self);
                 <!--投币显示屏重新结算-->
-                var screen = document.getElementsByClassName("screen")[0];
-                var input = document.getElementsByClassName("rawIn1")[0];
-                var clickValue = this.value;
-                var left = input.value-clickValue;
-                screen.innerHTML="剩余金额为"+left+"元";
+                leftShow(self);
             }
         }
     }
 }
+
+function priceEnough(par){
+    par.style.background='darkgreen';
+    par.disabled=false;
+}
+
+function outBoxShow(self){
+    var outBox = document.getElementsByClassName("outBox")[0];
+    outBox.innerHTML = self.previousSibling.innerHTML;//等于input之前的span的innerHtml
+}
+
+function leftShow(self){
+    var screen = document.getElementsByClassName("screen")[0];
+    var input = document.getElementsByClassName("rawIn1")[0];//获取投币框
+    var clickValue = self.value;//获取点击的那个商品的价钱
+    var left = input.value-clickValue;//计算投入钱跟点击的那个商品的差值，即卖完货后剩余的钱
+    screen.innerHTML="剩余金额为"+left+"元";//显示剩余
+}
+
+
 function outPrice(tui,chu,xian,table_price,input_price){
     tui.onclick=function(){
         <!--点击后出货框显示-->
