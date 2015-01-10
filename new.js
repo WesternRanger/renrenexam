@@ -2,35 +2,52 @@
  * Created by 陈奇 on 2015/1/8.
  */
 window.onload = function(){
-    var leftMoney = document.getElementById("left-money");//可用余额；
-    var dropMoney = document.getElementById("drop-money");//投币面值父节点
-    var dropMoneyChild = dropMoney.getElementsByTagName('input');//各种面值的人民币
-    var useMoney = 0;
+    function gid(a){return document.getElementById(a);}
+    var leftMoney = gid('left-money'),//可用余额；
+        dropMoney = gid('drop-money'),//投币面值父节点
+        dropMoneyChild = dropMoney.getElementsByTagName('input'),//各种面值的人民币
+        springParent = gid('ul'),//所有商品的父节点
+        spring = springParent.getElementsByTagName("input"),//获取商品的价格
+        cellButton = springParent.getElementsByTagName('button'),//商品购买按钮
+        back = gid('back'),//退款按钮父节点
+        backBtn = back.getElementsByTagName('input')[0],//退款按钮
+        pocket = gid('pocket'),//找零
+        out = gid('out'),//出货
+        time = gid('time'),//倒计时
+        stop = 0,//20秒无操作退款参数
+        sec = 20;//倒计时秒数
 
-    var springParent = document.getElementById("ul");//所有商品的父节点
-    var spring = springParent.getElementsByTagName("input");//获取商品的价格
 
-    var cellButton = springParent.getElementsByTagName('button');//商品购买按钮
+    canUseMoney();//堆积可用金额
+    backMoney();//退款
 
-    var back = document.getElementById('back');//退款按钮父节点
-    var backBtn = back.getElementsByTagName('input')[0];//退款按钮
+    //3秒后无操作开始倒计时
+    document.body.onmousemove=function(){
 
-    var pocket = document.getElementById('pocket');//找零
+        clearTimeout(stop);
+        stop=setTimeout(function(){
+            showTime();
+        },3000);
+    }
+    //倒计时
+    function showTime(){
+        time.innerHTML= sec;
+        if(sec>0){
+            sec--;
+        } else{
+            pocket.innerHTML = leftMoney.innerHTML;
+            drinkNotBuy();//商品选取不可购买
+            dropNotMoney();//投币按钮不可点击
+            backBtn.disabled = true;
+            //leftMoney.innerHTML= '0';
+        }
+        setTimeout(showTime,1000);
+    }
 
-    var out = document.getElementById('out');//出货
-
-    var secBuyLeft;//购物后，结算剩余
-    var X;//获取当前横坐标
-    var Y;//获取当前纵坐标
-    var imgSrc;
-
-    //可用余额
-    canUseMoney();
-    //退款
-    backMoney();
 
     //堆积可用金额
     function canUseMoney(){
+        var useMoney = 0;
         dropMoney.onclick = function(e){
             var target = e.target;
             useMoney += Number(parseInt(target.value));
@@ -39,6 +56,16 @@ window.onload = function(){
             canBuy();
         }
     }
+    //退款
+    function backMoney(){
+        backBtn.onclick = function(){
+            pocket.innerHTML = leftMoney.innerHTML;
+            leftMoney.innerHTML= '0';
+            drinkNotBuy();//商品选取不可购买
+            dropNotMoney();//投币按钮不可点击
+        }
+    }
+
 
     //余额可以买到的饮料
     function canBuy(){
@@ -53,16 +80,7 @@ window.onload = function(){
         }
     }
 
-    //退款按钮
-    function backMoney(){
-        backBtn.onclick = function(){
-            pocket.innerHTML = leftMoney.innerHTML;
-            leftMoney.innerHTML= '0';
-            for(var i in cellButton) {
-                cellButton[i].disabled = true;
-            }
-        }
-    }
+
 
     //商品购买
     function buy(){
@@ -74,11 +92,11 @@ window.onload = function(){
             var name = target.parentNode.getElementsByClassName('drink-name')[0].innerHTML;
             var drinkName = target.parentNode.getElementsByTagName('img')[0].src;
 
-            imgSrc = drinkName.substr(drinkName.length-10,10);
+            var imgSrc = drinkName.substr(drinkName.length-10,10);
             out.innerHTML += name+'<br>'+'<img src='+imgSrc+'/>'+'<br>';
 
             //点击购买，计算结余
-            secBuyLeft = Number(leftMoney.innerHTML) - Number(target.parentNode.getElementsByTagName('input')[0].value);
+            var secBuyLeft = Number(leftMoney.innerHTML) - Number(target.parentNode.getElementsByTagName('input')[0].value);
             leftMoney.innerHTML = secBuyLeft;
 
             //如果结余不足，不足以支付的饮料不可购买
@@ -89,28 +107,22 @@ window.onload = function(){
             }
 
             //一旦购买商品后，不可再投币
-            for(var i in dropMoneyChild) {
-                dropMoneyChild[i].disabled = true;
-            }
+            dropNotMoney();
 
         }
     }
 
-    var aaa;
-    document.body.onmousemove=function(){
-        clearTimeout(aaa);
-        aaa=setTimeout(function(){
-            autoBackMoney();
-        },20000);
-
-    }
-
-    //自动退币
-    function autoBackMoney(){
-        pocket.innerHTML = leftMoney.innerHTML;
-        leftMoney.innerHTML= '0';
+    //商品选取不可购买
+    function drinkNotBuy(){
         for(var i in cellButton) {
             cellButton[i].disabled = true;
+        }
+    }
+
+    //投币按钮不可点击
+    function dropNotMoney(){
+        for(var i in dropMoneyChild) {
+            dropMoneyChild[i].disabled = true;
         }
     }
 }
