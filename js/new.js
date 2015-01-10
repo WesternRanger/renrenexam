@@ -2,7 +2,9 @@
  * Created by 陈奇 on 2015/1/8.
  */
 window.onload = function(){
+    //通过id访问dom元素
     function gid(a){return document.getElementById(a);}
+
     var leftMoney = gid('left-money'),//可用余额；
         dropMoney = gid('drop-money'),//投币面值父节点
         dropMoneyChild = dropMoney.getElementsByTagName('input'),//各种面值的人民币
@@ -92,8 +94,9 @@ window.onload = function(){
             var name = target.parentNode.getElementsByClassName('drink-name')[0].innerHTML;
             var drinkName = target.parentNode.getElementsByTagName('img')[0].src;
 
-            var imgSrc = drinkName.substr(drinkName.length-10,10);
-            out.innerHTML += name+'<br>'+'<img src='+imgSrc+'/>'+'<br>';
+            var imgSrc = drinkName.substr(drinkName.length-15,15);
+            console.log(imgSrc);
+            out.innerHTML += name+'<br>'+'<img src=..'+imgSrc+'/>'+'<br>';
 
             //点击购买，计算结余
             var secBuyLeft = Number(leftMoney.innerHTML) - Number(target.parentNode.getElementsByTagName('input')[0].value);
