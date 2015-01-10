@@ -70,7 +70,7 @@ window.onload = function(){
             var target = e.target;
 
             //点击购买，货物出柜
-            var name = target.parentNode.getElementsByTagName('h3')[0].innerHTML;
+            var name = target.parentNode.getElementsByClassName('drink-name')[0].innerHTML;
             out.innerHTML += name+'<br>';
 
             //点击购买，计算结余
