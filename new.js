@@ -22,6 +22,7 @@ window.onload = function(){
     var secBuyLeft;//购物后，结算剩余
     var X;//获取当前横坐标
     var Y;//获取当前纵坐标
+    var imgSrc;
 
     //可用余额
     canUseMoney();
@@ -71,7 +72,10 @@ window.onload = function(){
 
             //点击购买，货物出柜
             var name = target.parentNode.getElementsByClassName('drink-name')[0].innerHTML;
-            out.innerHTML += name+'<br>';
+            var drinkName = target.parentNode.getElementsByTagName('img')[0].src;
+
+            imgSrc = drinkName.substr(drinkName.length-10,10);
+            out.innerHTML += name+'<br>'+'<img src='+imgSrc+'/>'+'<br>';
 
             //点击购买，计算结余
             secBuyLeft = Number(leftMoney.innerHTML) - Number(target.parentNode.getElementsByTagName('input')[0].value);
@@ -92,22 +96,14 @@ window.onload = function(){
         }
     }
 
-    //获取鼠标最后一次移动的坐标
-    document.addEventListener('mouseover',function(e){
-        X = e.pageX;
-        Y = e.pageY;
-    })
+    var aaa;
+    document.body.onmousemove=function(){
+        clearTimeout(aaa);
+        aaa=setTimeout(function(){
+            autoBackMoney();
+        },20000);
 
-    //判断鼠标是否移动，没有操作则退币
-    //setTimeout(function(){
-    //    document.addEventListener('mouseover',function(e){
-    //        var x = e.clientX;
-    //        var y = e.clientY;
-    //        if( x == X && y == Y){
-    //            autoBackMoney();
-    //        }
-    //    })
-    //},10000);
+    }
 
     //自动退币
     function autoBackMoney(){
