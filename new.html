@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>贩卖机</title>
+    <link rel="stylesheet/less" type="text/less" href="new.less">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
+</head>
+<body>
+    <div class="containter clearfix">
+        <div class="buy">
+            <p class="buy-p">购买区域</p>
+            <ul id="ul" class="clearfix">
+                <li>
+                    <p class="drink-name">雪碧</p>
+                    <img src="spring.jpg" alt="spring"/>
+                    <p>价格1元</p>
+                    <input type="hidden" value="1"/>
+                    <button disabled>购买</button>
+                </li>
+                <li>
+                    <p class="drink-name">透心凉</p>
+                    <img src="spring.jpg" alt="spring"/>
+                    <p>价格5元</p>
+                    <input type="hidden" value="5"/>
+                    <button disabled>购买</button>
+                </li>
+                <li>
+                    <p class="drink-name">心飞扬</p>
+                    <img src="spring.jpg" alt="spring"/>
+                    <p>价格10元</p>
+                    <input type="hidden" value="10"/>
+                    <button disabled>购买</button>
+                </li>
+                <li>
+                    <p class="drink-name">可口可乐</p>
+                    <img src="spring.jpg" alt="spring"/>
+                    <p>价格20元</p>
+                    <input type="hidden" value="20"/>
+                    <button disabled>购买</button>
+                </li>
+                <li>
+                    <p class="drink-name">百事可乐</p>
+                    <img src="spring.jpg" alt="spring"/>
+                    <p>价格21元</p>
+                    <input type="hidden" value="21"/>
+                    <button disabled>购买</button>
+                </li>
+                <li>
+                    <p class="drink-name">王老吉</p>
+                    <img src="spring.jpg" alt="spring"/>
+                    <p>价格22元</p>
+                    <input type="hidden" value="22"/>
+                    <button disabled>购买</button>
+                </li>
+                <li>
+                    <p class="drink-name">恒大冰泉</p>
+                    <img src="spring.jpg" alt="spring"/>
+                    <p>价格23元</p>
+                    <input type="hidden" value="23"/>
+                    <button disabled>购买</button>
+                </li>
+                <li>
+                    <p class="drink-name">加多宝</p>
+                    <img src="spring.jpg" alt="spring"/>
+                    <p>价格25元</p>
+                    <input type="hidden" value="25"/>
+                    <button disabled>购买</button>
+                </li>
+                <li>
+                    <p class="drink-name">脉动</p>
+                    <img src="spring.jpg" alt="spring"/>
+                    <p>价格25元</p>
+                    <input type="hidden" value="25"/>
+                    <button disabled>购买</button>
+                </li>
+                <li>
+                    <p class="drink-name">果粒橙</p>
+                    <img src="spring.jpg" alt="spring"/>
+                    <p>价格14元</p>
+                    <input type="hidden" value="14"/>
+                    <button disabled>购买</button>
+                </li>
+                <li>
+                    <p class="drink-name">崂山可乐</p>
+                    <img src="spring.jpg" alt="spring"/>
+                    <p>价格25元</p>
+                    <input type="hidden" value="25"/>
+                    <button disabled>购买</button>
+                </li>
+                <li>
+                    <p class="drink-name">美年达</p>
+                    <img src="spring.jpg" alt="spring"/>
+                    <p>价格27元</p>
+                    <input type="hidden" value="27"/>
+                    <button disabled>购买</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="drop">
+            <p class="drop-p">投币区域</p>
+            <div class="left-time">剩余操作时间：<span id="time">?</span>秒</div>
+            <div class="can-use">可用金额：<span id="left-money">0</span>元</div>
+            <p class="drop-money-title">
+                请选择面值投币
+                (本贩卖机只识别20元及以下的纸币)
+            </p>
+            <div id="drop-money" class="clearfix">
+                <input type="button" value="1元">
+                <input type="button" value="5元">
+                <input type="button" value="10元">
+                <input type="button" value="20元">
+                <input type="button" disabled value="50元">
+                <input type="button" disabled value="100元">
+            </div>
+            <div id="back"><input type="button" value="退币"/></div>
+            <div class="back-money">找零<span id="pocket">0</span>元,请收好。</div>
+        </div>
+
+        <div class="out">
+            <p class="out-p">出货区域</p>
+            <div id="out"></div>
+        </div>
+    </div>
+    <script src="new.js"></script>
+    <!--<script>-->
+        <!--var translate = {-->
+            <!--leftMoney:'left-money',-->
+            <!--dropMoney:'drop-money',-->
+            <!--input:'input',//获取某个元素下的所有input元素-->
+            <!--ul:'ul',-->
+            <!--button:'button',-->
+            <!--back:'back',//退款按钮父节点-->
+            <!--pocket:'pocket',-->
+            <!--out:'out'-->
+
+        <!--}-->
+        <!--new Machine(translate);-->
+    <!--</script>-->
+</body>
+</html>
