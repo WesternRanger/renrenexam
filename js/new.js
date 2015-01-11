@@ -28,23 +28,28 @@ window.onload = function(){
 
         clearTimeout(stop);
         stop=setTimeout(function(){
-            showTime();
-        },3000);
-    }
-    //倒计时
-    function showTime(){
-        time.innerHTML= sec;
-        if(sec>0){
-            sec--;
-        } else{
+            //showTime();
             pocket.innerHTML = leftMoney.innerHTML;
             drinkNotBuy();//商品选取不可购买
             dropNotMoney();//投币按钮不可点击
             backBtn.disabled = true;
-            //leftMoney.innerHTML= '0';
-        }
-        setTimeout(showTime,1000);
+            leftMoney.innerHTML= '0';
+        },4000);
     }
+    ////倒计时
+    //function showTime(){
+    //    time.innerHTML= sec;
+    //    if(sec>0){
+    //        sec--;
+    //    } else{
+    //        pocket.innerHTML = leftMoney.innerHTML;
+    //        drinkNotBuy();//商品选取不可购买
+    //        dropNotMoney();//投币按钮不可点击
+    //        backBtn.disabled = true;
+    //        //leftMoney.innerHTML= '0';
+    //    }
+    //    setTimeout(showTime,1000);
+    //}
 
 
     //堆积可用金额
@@ -126,6 +131,9 @@ window.onload = function(){
     function dropNotMoney(){
         for(var i in dropMoneyChild) {
             dropMoneyChild[i].disabled = true;
+            dropMoneyChild[i].style.background = '#737e78';
         }
     }
+    dropMoneyChild[4].style.background = '#737e78';
+    dropMoneyChild[5].style.background = '#737e78';
 }
