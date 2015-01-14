@@ -95,22 +95,23 @@ img {
 .containter .buy {
   background: #e5e5e5;
   width: 400px;
+  height: 469px;
   float: left;
   padding: 30px;
 }
-/* line 12, ../sass/ie.scss */
+/* line 13, ../sass/ie.scss */
 .containter .buy .buy-p {
   color: #c79b8f;
   font-size: 20px;
   text-align: center;
 }
-/* line 17, ../sass/ie.scss */
+/* line 18, ../sass/ie.scss */
 .containter .buy ul {
   list-style: none;
   padding: 0;
   margin: 40px 0 0;
 }
-/* line 21, ../sass/ie.scss */
+/* line 22, ../sass/ie.scss */
 .containter .buy ul li {
   padding: 10px 0;
   margin: 0;
@@ -120,25 +121,26 @@ img {
   text-align: center;
   font-family: "Microsoft YaHei";
 }
-/* line 29, ../sass/ie.scss */
+/* line 30, ../sass/ie.scss */
 .containter .buy ul li .drink-name {
   margin: 4px 0;
 }
-/* line 35, ../sass/ie.scss */
+/* line 36, ../sass/ie.scss */
 .containter .drop {
   background: #e5e5e5;
   width: 278px;
+  height: 469px;
   float: left;
   padding: 30px;
   margin: 0 1px;
 }
-/* line 41, ../sass/ie.scss */
+/* line 43, ../sass/ie.scss */
 .containter .drop .drop-p {
   color: #c79b8f;
   font-size: 20px;
   text-align: center;
 }
-/* line 46, ../sass/ie.scss */
+/* line 48, ../sass/ie.scss */
 .containter .drop .can-use {
   height: 86px;
   background: #fff;
@@ -154,15 +156,10 @@ img {
   -webkit-box-shadow: 3px 3px 3px #d3d7e6;
   box-shadow: 3px 3px 3px #d3d7e6;
 }
-/* line 57, ../sass/ie.scss */
+/* line 59, ../sass/ie.scss */
 .containter .drop .drop-money-title {
   text-align: center;
   margin: 50px auto 20px;
-}
-/* line 61, ../sass/ie.scss */
-.containter .drop .drop-money {
-  width: 100%;
-  text-align: center;
 }
 /* line 64, ../sass/ie.scss */
 .containter .drop .drop-money input {
@@ -171,6 +168,11 @@ img {
   outline: 0;
   color: #fff;
   background: #1b9c8a;
+  display: block;
+  float: left;
+  width: 40px;
+  height: 20px;
+  margin: 0 3.1px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -178,17 +180,17 @@ img {
   -webkit-box-shadow: 0 1px 0 #406870;
   box-shadow: 0 1px 0 #406870;
 }
-/* line 72, ../sass/ie.scss */
+/* line 77, ../sass/ie.scss */
 .containter .drop .drop-money input:focus {
   border: 0;
   outline: 0;
   color: #fff;
 }
-/* line 77, ../sass/ie.scss */
+/* line 82, ../sass/ie.scss */
 .containter .drop .drop-money input:hover {
   background: #1f877b;
 }
-/* line 80, ../sass/ie.scss */
+/* line 85, ../sass/ie.scss */
 .containter .drop .drop-money input:active {
   border: 0;
   outline: 0;
@@ -198,11 +200,11 @@ img {
   -webkit-box-shadow: 0 0 0 #406870;
   box-shadow: 0 0 0 #406870;
 }
-/* line 89, ../sass/ie.scss */
+/* line 94, ../sass/ie.scss */
 .containter .drop .back {
   width: 100%;
 }
-/* line 91, ../sass/ie.scss */
+/* line 96, ../sass/ie.scss */
 .containter .drop .back input {
   cursor: pointer;
   margin: 20px auto;
@@ -224,17 +226,17 @@ img {
   -webkit-box-shadow: 0 3px 0 #406870;
   box-shadow: 0 3px 0 #406870;
 }
-/* line 107, ../sass/ie.scss */
+/* line 112, ../sass/ie.scss */
 .containter .drop .back input:focus {
   border: 0;
   outline: 0;
   color: #fff;
 }
-/* line 112, ../sass/ie.scss */
+/* line 117, ../sass/ie.scss */
 .containter .drop .back input:hover {
   background: #1f877b;
 }
-/* line 115, ../sass/ie.scss */
+/* line 120, ../sass/ie.scss */
 .containter .drop .back input:active {
   border: 0;
   outline: 0;
@@ -244,13 +246,13 @@ img {
   -webkit-box-shadow: 0 2px 0 #406870;
   box-shadow: 0 2px 0 #406870;
 }
-/* line 124, ../sass/ie.scss */
+/* line 129, ../sass/ie.scss */
 .containter .drop .left-time {
   width: 80%;
   margin: 30px auto;
   text-align: center;
 }
-/* line 128, ../sass/ie.scss */
+/* line 133, ../sass/ie.scss */
 .containter .drop .left-time .time {
   display: inline-block;
   vertical-align: middle;
@@ -259,13 +261,13 @@ img {
   *display: inline;
   width: 40px;
 }
-/* line 133, ../sass/ie.scss */
+/* line 138, ../sass/ie.scss */
 .containter .drop .back-money {
   width: 80%;
   margin: 40px auto;
   text-align: center;
 }
-/* line 137, ../sass/ie.scss */
+/* line 142, ../sass/ie.scss */
 .containter .drop .back-money .pocket {
   display: inline-block;
   vertical-align: middle;
@@ -285,20 +287,21 @@ img {
   border-radius: 3px;
   background: #fff;
 }
-/* line 150, ../sass/ie.scss */
+/* line 155, ../sass/ie.scss */
 .containter .out {
   background: #e5e5e5;
   width: 140px;
+  height: 469px;
   float: left;
   padding: 30px;
 }
-/* line 155, ../sass/ie.scss */
+/* line 161, ../sass/ie.scss */
 .containter .out .out-p {
   color: #c79b8f;
   font-size: 20px;
   text-align: center;
 }
-/* line 160, ../sass/ie.scss */
+/* line 166, ../sass/ie.scss */
 .containter .out .out-box {
   width: 140px;
   height: 364px;

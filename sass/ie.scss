@@ -7,6 +7,7 @@
     .buy{
         background: #e5e5e5;
         width:400px;
+        height:469px;
         float: left;
         padding:30px;
         .buy-p{
@@ -35,6 +36,7 @@
     .drop{
         background: #e5e5e5;
         width:278px;
+        height:469px;
         float: left;
         padding:30px;
         margin:0 1px;
@@ -59,14 +61,17 @@
             margin:50px auto 20px;
         }
         .drop-money{
-            width:100%;
-            text-align: center;
             input{
                 cursor:pointer;
                 border:0;
                 outline:0;
                 color:#fff;
                 background: #1b9c8a;
+                display: block;
+                float: left;
+                width:40px;
+                height:20px;
+                margin:0 3.1px;
                 @include border-radius(3px);
                 @include box-shadow(0 1px 0 #406870);
                 &:focus{
@@ -150,6 +155,7 @@
     .out{
         background: #e5e5e5;
         width:140px;
+        height:469px;
         float: left;
         padding:30px;
         .out-p{
