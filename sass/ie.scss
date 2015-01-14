@@ -44,31 +44,31 @@
             text-align: center;
         }
         .can-use{
-            height:91px;
-            line-height:91px;
+            height:86px;
             background: #fff;
-            border-radius: 3px;
             margin:10px auto;
-            box-shadow: 3px 3px 3px #d3d7e6;
             text-align: center;
             font-size:25px;
+            line-height:86px;
             font-weight: 700;
+            @include border-radius(3px);
+            @include box-shadow(3px 3px 3px #d3d7e6);
         }
         .drop-money-title{
             text-align: center;
             margin:50px auto 20px;
         }
-        #drop-money{
+        .drop-money{
             width:100%;
             text-align: center;
             input{
                 cursor:pointer;
-                border-radius: 3px;
                 border:0;
                 outline:0;
                 color:#fff;
                 background: #1b9c8a;
-                box-shadow: 0 1px 0 #406870;
+                @include border-radius(3px);
+                @include box-shadow(0 1px 0 #406870);
                 &:focus{
                     border: 0;
                     outline: 0;
@@ -82,27 +82,11 @@
                     outline: 0;
                     background: #379c97;
                     color: #fff;
-                    box-shadow: 0 0 0 #406870;
+                    @include box-shadow(0 0 0 #406870);
                 }
-
-//                background: #737e78;
-//                box-shadow: 0 2px 0 #424242;
-//                &:focus{
-//                    border: 0;
-//                    outline: 0;
-//                }
-//                &:hover{
-//                    background: #4e5153;
-//                }
-//                &:active{
-//                    border: 0;
-//                    outline: 0;
-//                    background: #6d7270;
-//                    box-shadow: 0 1px 0 #4c4d4e;
-//                }
             }
         }
-        #back{
+        .back{
             width:100%;
             input{
                 cursor:pointer;
@@ -114,13 +98,12 @@
                 font-size:18px;
                 letter-spacing: 10px;
                 text-indent: 10px;
-                border-radius: 3px;
+                @include border-radius(3px);
                 border:0;
                 outline:0;
                 color: #fff;
-
                 background: #1b9c8a;
-                box-shadow: 0 3px 0 #406870;
+                @include box-shadow(0 3px 0 #406870);
                 &:focus{
                     border: 0;
                     outline: 0;
@@ -134,16 +117,16 @@
                     outline: 0;
                     background: #379c97;
                     color: #fff;
-                    box-shadow: 0 2px 0 #406870;
+                    @include box-shadow(0 2px 0 #406870);
                 }
             }
         }
         .left-time{
             width:80%;
-            margin:40px auto;
+            margin:30px auto;
             text-align: center;
-            #time{
-                display: inline-block;
+            .time{
+                @include inline-block;
                 width:40px;
             }
         }
@@ -151,15 +134,15 @@
             width:80%;
             margin:40px auto;
             text-align: center;
-            #pocket{
-                display: inline-block;
+            .pocket{
+                @include inline-block;
                 width:40px;
                 height:25px;
                 margin:0 10px;
                 text-align: center;
                 line-height: 25px;
-                box-shadow: 3px 3px 3px #d3d7e6;
-                border-radius: 3px;
+                @include box-shadow(3px 3px 3px #d3d7e6);
+                @include border-radius(3px);
                 background: #fff;
             }
         }
@@ -174,12 +157,12 @@
             font-size:20px;
             text-align: center;
         }
-        #out{
+        .out-box{
             width:140px;
-            height:390px;
-            margin:50px auto 0;
-            box-shadow: 3px 3px 3px #d3d7e6;
-            border-radius: 3px;
+            height:364px;
+            margin:35px auto 0;
+            @include box-shadow(3px 3px 3px #d3d7e6);
+            @include border-radius(3px);
             background: #fff;
             text-align: center;
             padding:20px 0;

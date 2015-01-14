@@ -3,8 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>贩卖机</title>
-    <link rel="stylesheet/less" type="text/less" href="../css/new.less">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
+    <link rel="stylesheet" href="../stylesheets/ie.css"/>
 </head>
 <body>
     <div class="containter clearfix">
@@ -100,13 +99,13 @@
 
         <div class="drop">
             <p class="drop-p">投币区域</p>
-            <div class="left-time">您一共有<span id="time">20</span>秒的操作时间</div>
+            <div class="left-time">您一共有<span class="time" id="time">20</span>秒的操作时间</div>
             <div class="can-use">可用金额：<span id="left-money">0</span>元</div>
             <p class="drop-money-title">
                 请选择面值投币
                 (本贩卖机只识别20元及以下的纸币)
             </p>
-            <div id="drop-money" class="clearfix">
+            <div class="drop-money" id="drop-money" class="clearfix">
                 <input type="button" value="1元">
                 <input type="button" value="5元">
                 <input type="button" value="10元">
@@ -114,13 +113,13 @@
                 <input type="button" disabled value="50元">
                 <input type="button" disabled value="100元">
             </div>
-            <div id="back"><input type="button" value="退币"/></div>
-            <div class="back-money">找零<span id="pocket">0</span>元,请收好。</div>
+            <div class="back" id="back"><input type="button" value="退币"/></div>
+            <div class="back-money">找零<span class="pocket" id="pocket">0</span>元,请收好。</div>
         </div>
 
         <div class="out">
             <p class="out-p">出货区域</p>
-            <div id="out"></div>
+            <div class="out-box" id="out"></div>
         </div>
     </div>
     <script src="../js/new.js"></script>

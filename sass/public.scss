@@ -1,10 +1,8 @@
+@import "compass/reset";
+@import "compass/css3";
 img{
     width:50px;
     height:50px;
-}
-p{
-    padding:0;
-    margin:0;
 }
 .clearfix{
     *zoom:1;

@@ -1,0 +1,315 @@
+/* line 5, C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 3, ../sass/public.scss */
+img {
+  width: 50px;
+  height: 50px;
+}
+
+/* line 7, ../sass/public.scss */
+.clearfix {
+  *zoom: 1;
+}
+/* line 9, ../sass/public.scss */
+.clearfix:before, .clearfix:after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+/* line 15, ../sass/public.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 2, ../sass/ie.scss */
+.containter {
+  margin: 20px auto;
+  width: 1000px;
+  font-family: "Microsoft YaHei";
+  color: #666;
+}
+/* line 7, ../sass/ie.scss */
+.containter .buy {
+  background: #e5e5e5;
+  width: 400px;
+  float: left;
+  padding: 30px;
+}
+/* line 12, ../sass/ie.scss */
+.containter .buy .buy-p {
+  color: #c79b8f;
+  font-size: 20px;
+  text-align: center;
+}
+/* line 17, ../sass/ie.scss */
+.containter .buy ul {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 0;
+}
+/* line 21, ../sass/ie.scss */
+.containter .buy ul li {
+  padding: 10px 0;
+  margin: 0;
+  outline: 1px solid #fff;
+  width: 100px;
+  float: left;
+  text-align: center;
+  font-family: "Microsoft YaHei";
+}
+/* line 29, ../sass/ie.scss */
+.containter .buy ul li .drink-name {
+  margin: 4px 0;
+}
+/* line 35, ../sass/ie.scss */
+.containter .drop {
+  background: #e5e5e5;
+  width: 278px;
+  float: left;
+  padding: 30px;
+  margin: 0 1px;
+}
+/* line 41, ../sass/ie.scss */
+.containter .drop .drop-p {
+  color: #c79b8f;
+  font-size: 20px;
+  text-align: center;
+}
+/* line 46, ../sass/ie.scss */
+.containter .drop .can-use {
+  height: 86px;
+  background: #fff;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 25px;
+  line-height: 86px;
+  font-weight: 700;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 3px 3px 3px #d3d7e6;
+  -webkit-box-shadow: 3px 3px 3px #d3d7e6;
+  box-shadow: 3px 3px 3px #d3d7e6;
+}
+/* line 57, ../sass/ie.scss */
+.containter .drop .drop-money-title {
+  text-align: center;
+  margin: 50px auto 20px;
+}
+/* line 61, ../sass/ie.scss */
+.containter .drop .drop-money {
+  width: 100%;
+  text-align: center;
+}
+/* line 64, ../sass/ie.scss */
+.containter .drop .drop-money input {
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  background: #1b9c8a;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 1px 0 #406870;
+  -webkit-box-shadow: 0 1px 0 #406870;
+  box-shadow: 0 1px 0 #406870;
+}
+/* line 72, ../sass/ie.scss */
+.containter .drop .drop-money input:focus {
+  border: 0;
+  outline: 0;
+  color: #fff;
+}
+/* line 77, ../sass/ie.scss */
+.containter .drop .drop-money input:hover {
+  background: #1f877b;
+}
+/* line 80, ../sass/ie.scss */
+.containter .drop .drop-money input:active {
+  border: 0;
+  outline: 0;
+  background: #379c97;
+  color: #fff;
+  -moz-box-shadow: 0 0 0 #406870;
+  -webkit-box-shadow: 0 0 0 #406870;
+  box-shadow: 0 0 0 #406870;
+}
+/* line 89, ../sass/ie.scss */
+.containter .drop .back {
+  width: 100%;
+}
+/* line 91, ../sass/ie.scss */
+.containter .drop .back input {
+  cursor: pointer;
+  margin: 20px auto;
+  display: block;
+  width: 129px;
+  height: 30px;
+  font-family: "Microsoft YaHei";
+  font-size: 18px;
+  letter-spacing: 10px;
+  text-indent: 10px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  background: #1b9c8a;
+  -moz-box-shadow: 0 3px 0 #406870;
+  -webkit-box-shadow: 0 3px 0 #406870;
+  box-shadow: 0 3px 0 #406870;
+}
+/* line 107, ../sass/ie.scss */
+.containter .drop .back input:focus {
+  border: 0;
+  outline: 0;
+  color: #fff;
+}
+/* line 112, ../sass/ie.scss */
+.containter .drop .back input:hover {
+  background: #1f877b;
+}
+/* line 115, ../sass/ie.scss */
+.containter .drop .back input:active {
+  border: 0;
+  outline: 0;
+  background: #379c97;
+  color: #fff;
+  -moz-box-shadow: 0 2px 0 #406870;
+  -webkit-box-shadow: 0 2px 0 #406870;
+  box-shadow: 0 2px 0 #406870;
+}
+/* line 124, ../sass/ie.scss */
+.containter .drop .left-time {
+  width: 80%;
+  margin: 30px auto;
+  text-align: center;
+}
+/* line 128, ../sass/ie.scss */
+.containter .drop .left-time .time {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: 40px;
+}
+/* line 133, ../sass/ie.scss */
+.containter .drop .back-money {
+  width: 80%;
+  margin: 40px auto;
+  text-align: center;
+}
+/* line 137, ../sass/ie.scss */
+.containter .drop .back-money .pocket {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: 40px;
+  height: 25px;
+  margin: 0 10px;
+  text-align: center;
+  line-height: 25px;
+  -moz-box-shadow: 3px 3px 3px #d3d7e6;
+  -webkit-box-shadow: 3px 3px 3px #d3d7e6;
+  box-shadow: 3px 3px 3px #d3d7e6;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: #fff;
+}
+/* line 150, ../sass/ie.scss */
+.containter .out {
+  background: #e5e5e5;
+  width: 140px;
+  float: left;
+  padding: 30px;
+}
+/* line 155, ../sass/ie.scss */
+.containter .out .out-p {
+  color: #c79b8f;
+  font-size: 20px;
+  text-align: center;
+}
+/* line 160, ../sass/ie.scss */
+.containter .out .out-box {
+  width: 140px;
+  height: 364px;
+  margin: 35px auto 0;
+  -moz-box-shadow: 3px 3px 3px #d3d7e6;
+  -webkit-box-shadow: 3px 3px 3px #d3d7e6;
+  box-shadow: 3px 3px 3px #d3d7e6;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
