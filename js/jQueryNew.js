@@ -78,14 +78,11 @@ $(function(){
         $("#pocket").html(leftMoney);
         //液晶屏清零
         $("#left-money").html("0");
+        //屏幕计价重新开始
+        useMoney = 0;
         //购买区不可购买
         drinkPrice.each(function(i) {
             drinkBtn.eq(i).attr("disabled",true);
-        })
-        //投币区不可投币
-        var dropBtn = $("#drop-money input");
-        dropBtn.each(function(i){
-            dropBtn.eq(i).attr("disabled",true);
         })
     }
 
