@@ -140,7 +140,12 @@ img {
   font-size: 20px;
   text-align: center;
 }
-/* line 48, ../sass/ie.scss */
+/* line 49, ../sass/ie.scss */
+.containter .drop .left-time .time {
+  font-size: 30px;
+  color: #e08aa2;
+}
+/* line 54, ../sass/ie.scss */
 .containter .drop .can-use {
   height: 86px;
   background: #fff;
@@ -156,12 +161,12 @@ img {
   -webkit-box-shadow: 3px 3px 3px #d3d7e6;
   box-shadow: 3px 3px 3px #d3d7e6;
 }
-/* line 59, ../sass/ie.scss */
+/* line 65, ../sass/ie.scss */
 .containter .drop .drop-money-title {
   text-align: center;
   margin: 50px auto 20px;
 }
-/* line 64, ../sass/ie.scss */
+/* line 70, ../sass/ie.scss */
 .containter .drop .drop-money input {
   cursor: pointer;
   border: 0;
@@ -180,17 +185,17 @@ img {
   -webkit-box-shadow: 0 1px 0 #406870;
   box-shadow: 0 1px 0 #406870;
 }
-/* line 77, ../sass/ie.scss */
+/* line 83, ../sass/ie.scss */
 .containter .drop .drop-money input:focus {
   border: 0;
   outline: 0;
   color: #fff;
 }
-/* line 82, ../sass/ie.scss */
+/* line 88, ../sass/ie.scss */
 .containter .drop .drop-money input:hover {
   background: #1f877b;
 }
-/* line 85, ../sass/ie.scss */
+/* line 91, ../sass/ie.scss */
 .containter .drop .drop-money input:active {
   border: 0;
   outline: 0;
@@ -200,11 +205,11 @@ img {
   -webkit-box-shadow: 0 0 0 #406870;
   box-shadow: 0 0 0 #406870;
 }
-/* line 94, ../sass/ie.scss */
+/* line 100, ../sass/ie.scss */
 .containter .drop .back {
   width: 100%;
 }
-/* line 96, ../sass/ie.scss */
+/* line 102, ../sass/ie.scss */
 .containter .drop .back input {
   cursor: pointer;
   margin: 20px auto;
@@ -226,17 +231,17 @@ img {
   -webkit-box-shadow: 0 3px 0 #406870;
   box-shadow: 0 3px 0 #406870;
 }
-/* line 112, ../sass/ie.scss */
+/* line 118, ../sass/ie.scss */
 .containter .drop .back input:focus {
   border: 0;
   outline: 0;
   color: #fff;
 }
-/* line 117, ../sass/ie.scss */
+/* line 123, ../sass/ie.scss */
 .containter .drop .back input:hover {
   background: #1f877b;
 }
-/* line 120, ../sass/ie.scss */
+/* line 126, ../sass/ie.scss */
 .containter .drop .back input:active {
   border: 0;
   outline: 0;
@@ -246,13 +251,13 @@ img {
   -webkit-box-shadow: 0 2px 0 #406870;
   box-shadow: 0 2px 0 #406870;
 }
-/* line 129, ../sass/ie.scss */
+/* line 135, ../sass/ie.scss */
 .containter .drop .left-time {
   width: 80%;
   margin: 30px auto;
   text-align: center;
 }
-/* line 133, ../sass/ie.scss */
+/* line 139, ../sass/ie.scss */
 .containter .drop .left-time .time {
   display: inline-block;
   vertical-align: middle;
@@ -261,13 +266,13 @@ img {
   *display: inline;
   width: 40px;
 }
-/* line 138, ../sass/ie.scss */
+/* line 144, ../sass/ie.scss */
 .containter .drop .back-money {
   width: 80%;
   margin: 40px auto;
   text-align: center;
 }
-/* line 142, ../sass/ie.scss */
+/* line 148, ../sass/ie.scss */
 .containter .drop .back-money .pocket {
   display: inline-block;
   vertical-align: middle;
@@ -287,7 +292,7 @@ img {
   border-radius: 3px;
   background: #fff;
 }
-/* line 155, ../sass/ie.scss */
+/* line 161, ../sass/ie.scss */
 .containter .out {
   background: #e5e5e5;
   width: 140px;
@@ -295,13 +300,13 @@ img {
   float: left;
   padding: 30px;
 }
-/* line 161, ../sass/ie.scss */
+/* line 167, ../sass/ie.scss */
 .containter .out .out-p {
   color: #c79b8f;
   font-size: 20px;
   text-align: center;
 }
-/* line 166, ../sass/ie.scss */
+/* line 172, ../sass/ie.scss */
 .containter .out .out-box {
   width: 140px;
   height: 364px;

@@ -6,19 +6,24 @@ $(function(){
         useMoney = 0,//屏幕要显示的可用余额
         outHtml = '',//出货累加
         clearId,//与无操作20秒有关
+        clearTime,//20秒倒计时
+        t,//20秒
 
         drinkCellParent = $("#ul"),
         drinkPrice = drinkCellParent.find("li input"),
         drinkBtn = drinkCellParent.find("li button");
 
-
     //购买
     $("#drop-money").on('click',function(e){
         var target = $(e.target);
+        //投币后开始倒计时
+        timeOver();
+
         useMoney += parseInt(target.val());
         //投币后屏幕显示余额);
         $("#left-money").html(useMoney);
         compare(useMoney)
+
     });
 
     //点击退币；
@@ -56,7 +61,7 @@ $(function(){
         clearTimeout(clearId);
         clearId = setTimeout(function(){
             back();
-        },20000)
+        },20000);
     })
 
     //计算价格，点亮可购买的商品
@@ -83,7 +88,28 @@ $(function(){
         //购买区不可购买
         drinkPrice.each(function(i) {
             drinkBtn.eq(i).attr("disabled",true);
+        });
+    }
+
+    //20秒倒计时
+    function timeOver(){
+        DOC.mousemove(function(){
+            clearInterval(clearTime);
+            t = 20;
+            $("#time").html(t);
+            clearTime = setInterval(function(){
+                if(t>0){
+                    t--;
+                }else{
+                    t = 0;
+                }
+                console.log(t);
+                $("#time").html(t);
+            },1000);
         })
     }
+
+    //设置50,100面值的背景灰色
+    $("#drop-money input[disabled]").css("background","#737e78");
 
 })
