@@ -36,22 +36,6 @@ window.onload = function(){
             leftMoney.innerHTML= '0';
         },4000);
     }
-    ////倒计时
-    //function showTime(){
-    //    time.innerHTML= sec;
-    //    if(sec>0){
-    //        sec--;
-    //    } else{
-    //        pocket.innerHTML = leftMoney.innerHTML;
-    //        drinkNotBuy();//商品选取不可购买
-    //        dropNotMoney();//投币按钮不可点击
-    //        backBtn.disabled = true;
-    //        //leftMoney.innerHTML= '0';
-    //    }
-    //    setTimeout(showTime,1000);
-    //}
-
-
     //堆积可用金额
     function canUseMoney(){
         var useMoney = 0;
@@ -60,7 +44,7 @@ window.onload = function(){
             useMoney += Number(parseInt(target.value));
             leftMoney.innerHTML = Number(useMoney);
             //余额可以买的到的饮料
-            canBuy();
+            compare(useMoney);
         }
     }
     //退款
@@ -75,14 +59,14 @@ window.onload = function(){
 
 
     //余额可以买到的饮料
-    function canBuy(){
-        var canUse = Number(leftMoney.innerHTML);
+    function compare(canUse){
         for(var i in spring){
             if (canUse >= spring[i].value) {
                 cellButton[i].disabled = false;
                 //点击投入金钱可以买到的饮料出柜。
                 buy();
             } else {
+                cellButton[i].disabled = true;
             }
         }
     }
@@ -108,14 +92,10 @@ window.onload = function(){
             leftMoney.innerHTML = secBuyLeft;
 
             //如果结余不足，不足以支付的饮料不可购买
-            for(var i in spring) {
-                if (secBuyLeft < spring[i].value) {
-                    cellButton[i].disabled = true;
-                }
-            }
+            compare(secBuyLeft);
 
             //一旦购买商品后，不可再投币
-            dropNotMoney();
+            //dropNotMoney();
 
         }
     }
