@@ -16,9 +16,9 @@ window.onload = function(){
         pocket = gid('pocket'),//找零
         out = gid('out'),//出货
         time = gid('time'),//倒计时
+        
         stop = 0,//20秒无操作退款参数
-        useMoney = 0,
-        sec = 20;//倒计时秒数
+        useMoney = 0;
 
 
     //堆积可用金额
@@ -33,7 +33,6 @@ window.onload = function(){
     //点击退款
     backBtn.onclick = function(){
         screenClear();//液晶屏清零，退币
-        dropNotMoney();//投币按钮不可点击
     }
 
     //商品购买
@@ -50,15 +49,10 @@ window.onload = function(){
 
         //点击购买，计算结余
         useMoney -= Number(target.parentNode.getElementsByTagName('input')[0].value);
-        var secBuyLeft = useMoney;
-        leftMoney.innerHTML = secBuyLeft;
+        leftMoney.innerHTML = useMoney;
 
         //如果结余不足，不足以支付的饮料不可购买
-        compare(secBuyLeft);
-
-        //一旦购买商品后，不可再投币
-        //dropNotMoney();
-
+        compare(useMoney);
     }
 
     //3秒后无操作开始倒计时
@@ -67,7 +61,6 @@ window.onload = function(){
         clearTimeout(stop);
         stop=setTimeout(function(){
             screenClear();
-            dropNotMoney();//投币按钮不可点击
         },20000);
     }
 
@@ -85,19 +78,11 @@ window.onload = function(){
     //液晶屏清零，退币，购买区不可购买
     function screenClear(){
         pocket.innerHTML = leftMoney.innerHTML;
-        //backBtn.disabled = true;
         leftMoney.innerHTML= '0';
+        useMoney = 0;
         //购买区不可购买
         for(var i in cellButton) {
             cellButton[i].disabled = true;
-        }
-    }
-
-    //投币按钮不可点击
-    function dropNotMoney(){
-        for(var i in dropMoneyChild) {
-            dropMoneyChild[i].disabled = true;
-            dropMoneyChild[i].style.background = '#737e78';
         }
     }
 
