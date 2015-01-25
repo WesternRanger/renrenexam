@@ -17,91 +17,77 @@ window.onload = function(){
         out = gid('out'),//出货
         time = gid('time'),//倒计时
         stop = 0,//20秒无操作退款参数
+        useMoney = 0,
         sec = 20;//倒计时秒数
 
 
-    canUseMoney();//堆积可用金额
-    backMoney();//退款
+    //堆积可用金额
+    dropMoney.onclick = function(e){
+        var target = e.target;
+        useMoney += Number(parseInt(target.value));
+        leftMoney.innerHTML = Number(useMoney);
+        //余额可以买的到的饮料
+        compare(useMoney);
+    }
+
+    //点击退款
+    backBtn.onclick = function(){
+        screenClear();//液晶屏清零，退币
+        dropNotMoney();//投币按钮不可点击
+    }
+
+    //商品购买
+    springParent.onclick = function(e){
+        var target = e.target;
+
+        //点击购买，货物出柜
+        var name = target.parentNode.getElementsByClassName('drink-name')[0].innerHTML;
+        var drinkName = target.parentNode.getElementsByTagName('img')[0].src;
+
+        var imgSrc = drinkName.substr(drinkName.length-15,15);
+        console.log(imgSrc);
+        out.innerHTML += name+'<br>'+'<img src=..'+imgSrc+'/>'+'<br>';
+
+        //点击购买，计算结余
+        useMoney -= Number(target.parentNode.getElementsByTagName('input')[0].value);
+        var secBuyLeft = useMoney;
+        leftMoney.innerHTML = secBuyLeft;
+
+        //如果结余不足，不足以支付的饮料不可购买
+        compare(secBuyLeft);
+
+        //一旦购买商品后，不可再投币
+        //dropNotMoney();
+
+    }
 
     //3秒后无操作开始倒计时
     document.body.onmousemove=function(){
 
         clearTimeout(stop);
         stop=setTimeout(function(){
-            //showTime();
-            pocket.innerHTML = leftMoney.innerHTML;
-            drinkNotBuy();//商品选取不可购买
+            screenClear();
             dropNotMoney();//投币按钮不可点击
-            backBtn.disabled = true;
-            leftMoney.innerHTML= '0';
-        },4000);
+        },20000);
     }
-    //堆积可用金额
-    function canUseMoney(){
-        var useMoney = 0;
-        dropMoney.onclick = function(e){
-            var target = e.target;
-            useMoney += Number(parseInt(target.value));
-            leftMoney.innerHTML = Number(useMoney);
-            //余额可以买的到的饮料
-            compare(useMoney);
-        }
-    }
-    //退款
-    function backMoney(){
-        backBtn.onclick = function(){
-            pocket.innerHTML = leftMoney.innerHTML;
-            leftMoney.innerHTML= '0';
-            drinkNotBuy();//商品选取不可购买
-            dropNotMoney();//投币按钮不可点击
-        }
-    }
-
 
     //余额可以买到的饮料
     function compare(canUse){
         for(var i in spring){
             if (canUse >= spring[i].value) {
                 cellButton[i].disabled = false;
-                //点击投入金钱可以买到的饮料出柜。
-                buy();
             } else {
                 cellButton[i].disabled = true;
             }
         }
     }
 
-
-
-    //商品购买
-    function buy(){
-        //给商品父节点绑定click事件；
-        springParent.onclick = function(e){
-            var target = e.target;
-
-            //点击购买，货物出柜
-            var name = target.parentNode.getElementsByClassName('drink-name')[0].innerHTML;
-            var drinkName = target.parentNode.getElementsByTagName('img')[0].src;
-
-            var imgSrc = drinkName.substr(drinkName.length-15,15);
-            console.log(imgSrc);
-            out.innerHTML += name+'<br>'+'<img src=..'+imgSrc+'/>'+'<br>';
-
-            //点击购买，计算结余
-            var secBuyLeft = Number(leftMoney.innerHTML) - Number(target.parentNode.getElementsByTagName('input')[0].value);
-            leftMoney.innerHTML = secBuyLeft;
-
-            //如果结余不足，不足以支付的饮料不可购买
-            compare(secBuyLeft);
-
-            //一旦购买商品后，不可再投币
-            //dropNotMoney();
-
-        }
-    }
-
-    //商品选取不可购买
-    function drinkNotBuy(){
+    //液晶屏清零，退币，购买区不可购买
+    function screenClear(){
+        pocket.innerHTML = leftMoney.innerHTML;
+        //backBtn.disabled = true;
+        leftMoney.innerHTML= '0';
+        //购买区不可购买
         for(var i in cellButton) {
             cellButton[i].disabled = true;
         }
@@ -114,6 +100,8 @@ window.onload = function(){
             dropMoneyChild[i].style.background = '#737e78';
         }
     }
+
+    //面值50和100的不可投递
     dropMoneyChild[4].style.background = '#737e78';
     dropMoneyChild[5].style.background = '#737e78';
 }
