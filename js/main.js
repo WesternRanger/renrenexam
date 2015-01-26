@@ -1,37 +1,44 @@
 /**
- * Created by Administrator on 2015/1/23.
+ * Created by Administrator on 2015/1/26.
  */
-$(function(){
+require.config({
+    paths: {
+        'jquery': 'jquery-2.1.3.min'
+    }
+});
+
+require(['compare','timeOver','jquery'], function(Compare,TimeOver,$) {
     var DOC = $(document),
         useMoney = 0,//屏幕要显示的可用余额
         outHtml = '',//出货累加
         clearId,//与无操作20秒有关
-        clearTime,//20秒倒计时
-        t,//20秒
 
         drinkCellParent = $("#ul"),
         drinkPrice = drinkCellParent.find("li input"),
         drinkBtn = drinkCellParent.find("li button");
 
-    //购买
-    $("#drop-money").on('click',function(e){
+    //设置50,100面值的背景灰色
+    $("#drop-money input[disabled]").css("background","#737e78");
+
+    //投币区
+    $('#drop-money').on('click',function(e){
         var target = $(e.target);
         //投币后开始倒计时
-        timeOver();
+        TimeOver.timeOver();
 
         useMoney += parseInt(target.val());
         //投币后屏幕显示余额);
         $("#left-money").html(useMoney);
-        compare(useMoney)
+        Compare.compare(useMoney)
 
     });
 
-    //点击退币；
+    //退币区；
     $("#back").find("input").on("click",function(){
         back();
     })
 
-    //点击购买饮料
+    //购买区
     drinkCellParent.on("click",function(e){
         //获取事件对象；
         var target = $(e.target);
@@ -53,7 +60,7 @@ $(function(){
         $("#left-money").html(left);
 
         //重新计算点亮的按钮
-        compare(left);
+        Compare.compare(left);
     })
 
     //20秒无操作退款
@@ -64,19 +71,6 @@ $(function(){
         },20000);
     })
 
-    //计算价格，点亮可购买的商品
-    function compare(left){
-        drinkPrice.each(function(i){
-            if(left < drinkPrice.eq(i).val()){
-                drinkBtn.eq(i).attr("disabled",true);
-            }
-            else{
-                drinkBtn.eq(i).attr("disabled",false);
-            }
-        })
-    }
-
-    //退款
     function back(){
         var leftMoney = $("#left-money").html();
         //退币口
@@ -91,25 +85,4 @@ $(function(){
         });
     }
 
-    //20秒倒计时
-    function timeOver(){
-        DOC.mousemove(function(){
-            clearInterval(clearTime);
-            t = 20;
-            $("#time").html(t);
-            clearTime = setInterval(function(){
-                if(t>0){
-                    t--;
-                }else{
-                    t = 0;
-                }
-                console.log(t);
-                $("#time").html(t);
-            },1000);
-        })
-    }
-
-    //设置50,100面值的背景灰色
-    $("#drop-money input[disabled]").css("background","#737e78");
-
-})
+});
